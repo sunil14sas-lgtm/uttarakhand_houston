@@ -122,6 +122,59 @@
             padding: 1.5rem;
         }
         
+        /* Members Directory */
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .member-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .member-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #FF6B35;
+        }
+        
+        .member-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #FF6B35, #F77B00);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        
+        .member-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+        
+        .member-region {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .member-year {
+            color: #999;
+            font-size: 0.85rem;
+        }
+        
         /* Gallery */
         .gallery {
             display: grid;
@@ -194,6 +247,53 @@
             font-weight: bold;
         }
         
+        /* Search Box */
+        .search-box {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .search-box input {
+            padding: 0.75rem 1.5rem;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: #FF6B35;
+        }
+        
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+            background: #FFF5F0;
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #FF6B35;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
         /* Footer */
         footer {
             background: #333;
@@ -256,8 +356,9 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#events">Events</a></li>
+            <li><a href="#members">Our Community</a></li>
             <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#membership">Membership</a></li>
+            <li><a href="#join">Join Us</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -271,21 +372,42 @@
                 <p>We are a vibrant community of families from Uttarakhand (the Land of Gods - देवभूमि) living in the Greater Houston area. Our mission is to preserve our rich cultural heritage, celebrate our traditions, and create a home away from home for all Uttarakhandis in Houston.</p>
                 <p style="margin-top: 1rem;">Join us in celebrating the beautiful culture of both Garhwal and Kumaon regions through festivals, cultural programs, and community gatherings.</p>
             </div>
+
+            <!-- Community Stats -->
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Families</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Annual Events</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2015</div>
+                    <div class="stat-label">Established</div>
+                </div>
+            </div>
         </section>
 
         <!-- About Section -->
         <section id="about">
             <h2>About Our Community</h2>
-            <p>Founded in 2015, the Uttarakhand Community of Houston brings together over 150 families who share a common bond - our love for Uttarakhand and its rich cultural heritage.</p>
+            <p>Founded in 2015, the Uttarakhand Community of Houston brings together families who share a common bond - our love for Uttarakhand and its rich cultural heritage. We represent all 13 districts of Uttarakhand, from the peaks of Uttarkashi to the plains of Udham Singh Nagar.</p>
             
             <h3>Our Mission</h3>
             <ul class="feature-list">
-                <li>Preserve and promote Uttarakhandi culture, traditions, and languages</li>
+                <li>Preserve and promote Uttarakhandi culture, traditions, and languages (Garhwali & Kumaoni)</li>
                 <li>Organize cultural events and festivals throughout the year</li>
                 <li>Support new families settling in Houston</li>
-                <li>Teach our children about their cultural roots</li>
+                <li>Teach our children about their cultural roots and heritage</li>
                 <li>Foster community service and charitable initiatives</li>
                 <li>Build bridges with other Indian communities in Houston</li>
+                <li>Create a support network for personal and professional growth</li>
             </ul>
 
             <h3>Leadership Team 2025</h3>
@@ -313,9 +435,9 @@
                 </div>
                 <div class="card">
                     <div class="card-body">
-                        <strong>Treasurer</strong><br>
+                        <strong>Cultural Coordinator</strong><br>
                         [Name]<br>
-                        treasurer@uttarakhandhouston.org
+                        events@uttarakhandhouston.org
                     </div>
                 </div>
             </div>
@@ -324,6 +446,8 @@
         <!-- Events Section -->
         <section id="events">
             <h2>Upcoming Events 2025</h2>
+            <p>All community members and their guests are welcome to join our celebrations!</p>
+            
             <div class="card-grid">
                 <div class="card">
                     <div class="card-header">
@@ -334,8 +458,8 @@
                         <p><strong>Date:</strong> Sunday, March 16, 2025</p>
                         <p><strong>Time:</strong> 11:00 AM - 6:00 PM</p>
                         <p><strong>Venue:</strong> Bear Creek Park, Houston</p>
-                        <p><strong>Activities:</strong> Traditional Holi with colors, Kumaoni Holi songs, cultural performances, authentic food</p>
-                        <p><strong>Entry:</strong> Free for members | $20 for guests</p>
+                        <p><strong>Activities:</strong> Traditional Holi with colors, Kumaoni Holi songs, Chholiya dance, authentic Uttarakhandi food</p>
+                        <p style="margin-top: 0.5rem;"><em>Potluck event - bring a dish to share!</em></p>
                     </div>
                 </div>
 
@@ -348,22 +472,22 @@
                         <p><strong>Date:</strong> Sunday, April 13, 2025</p>
                         <p><strong>Time:</strong> 5:00 PM - 9:00 PM</p>
                         <p><strong>Venue:</strong> India House, Houston</p>
-                        <p><strong>Activities:</strong> Traditional harvest celebration, folk dances, community dinner</p>
-                        <p><strong>Entry:</strong> Free for members | $15 for guests</p>
+                        <p><strong>Activities:</strong> Traditional harvest celebration, folk dances, cultural performances</p>
+                        <p style="margin-top: 0.5rem;"><em>Light refreshments will be served</em></p>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="card-header">
                         <h3>Summer Picnic</h3>
-                        <p>Community Gathering</p>
+                        <p>Family Fun Day</p>
                     </div>
                     <div class="card-body">
                         <p><strong>Date:</strong> Saturday, May 24, 2025</p>
                         <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
                         <p><strong>Venue:</strong> George Bush Park, Houston</p>
-                        <p><strong>Activities:</strong> Games, sports, potluck lunch, activities for kids</p>
-                        <p><strong>Entry:</strong> Free for all</p>
+                        <p><strong>Activities:</strong> Cricket, volleyball, kids activities, games for all ages</p>
+                        <p style="margin-top: 0.5rem;"><em>Potluck lunch - bring your favorite dish!</em></p>
                     </div>
                 </div>
 
@@ -376,8 +500,8 @@
                         <p><strong>Date:</strong> Sunday, September 7, 2025</p>
                         <p><strong>Time:</strong> 4:00 PM - 8:00 PM</p>
                         <p><strong>Venue:</strong> Arya Samaj Hall, Houston</p>
-                        <p><strong>Activities:</strong> Traditional puja, bhajans, cultural programs</p>
-                        <p><strong>Entry:</strong> Free for all</p>
+                        <p><strong>Activities:</strong> Traditional puja, devotional songs, cultural programs</p>
+                        <p style="margin-top: 0.5rem;"><em>Open to all - prasad will be served</em></p>
                     </div>
                 </div>
 
@@ -390,8 +514,8 @@
                         <p><strong>Date:</strong> Saturday, October 18, 2025</p>
                         <p><strong>Time:</strong> 6:00 PM - 10:00 PM</p>
                         <p><strong>Venue:</strong> Sugar Land Community Center</p>
-                        <p><strong>Activities:</strong> Diwali puja, cultural show, dinner, kids activities</p>
-                        <p><strong>Entry:</strong> $30 per family (members) | $50 (guests)</p>
+                        <p><strong>Activities:</strong> Lakshmi puja, cultural performances, kids corner, dinner</p>
+                        <p style="margin-top: 0.5rem;"><em>Community dinner included</em></p>
                     </div>
                 </div>
 
@@ -404,11 +528,113 @@
                         <p><strong>Date:</strong> Sunday, November 9, 2025</p>
                         <p><strong>Time:</strong> 5:00 PM - 10:00 PM</p>
                         <p><strong>Venue:</strong> To be announced</p>
-                        <p><strong>Activities:</strong> Annual dinner, cultural showcase, awards ceremony</p>
-                        <p><strong>Entry:</strong> $25 per person (members) | $35 (guests)</p>
+                        <p><strong>Activities:</strong> Annual gathering, cultural showcase, recognition ceremony</p>
+                        <p style="margin-top: 0.5rem;"><em>Grand annual dinner event</em></p>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Members Section -->
+        <section id="members">
+            <h2>Our Community Members</h2>
+            <p>Meet the wonderful families who make our community vibrant and strong. We have members from all regions of Uttarakhand!</p>
+            
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" placeholder="Search by name or region..." id="memberSearch">
+            </div>
+
+            <div class="members-grid">
+                <!-- Sample member cards - Replace with actual member data -->
+                <div class="member-card">
+                    <div class="member-avatar">RK</div>
+                    <div class="member-name">Rajesh & Kavita Sharma</div>
+                    <div class="member-region">Dehradun</div>
+                    <div class="member-year">Member since 2015</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">PS</div>
+                    <div class="member-name">Prakash & Sunita Bisht</div>
+                    <div class="member-region">Almora</div>
+                    <div class="member-year">Member since 2016</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">AN</div>
+                    <div class="member-name">Anil & Neema Rawat</div>
+                    <div class="member-region">Pauri Garhwal</div>
+                    <div class="member-year">Member since 2017</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">VM</div>
+                    <div class="member-name">Vinod & Meera Negi</div>
+                    <div class="member-region">Tehri Garhwal</div>
+                    <div class="member-year">Member since 2018</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">DG</div>
+                    <div class="member-name">Deepak & Geeta Pandey</div>
+                    <div class="member-region">Nainital</div>
+                    <div class="member-year">Member since 2018</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">SK</div>
+                    <div class="member-name">Suresh & Kamla Joshi</div>
+                    <div class="member-region">Pithoragarh</div>
+                    <div class="member-year">Member since 2019</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">RS</div>
+                    <div class="member-name">Ramesh & Savita Bhatt</div>
+                    <div class="member-region">Bageshwar</div>
+                    <div class="member-year">Member since 2019</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">MR</div>
+                    <div class="member-name">Mahesh & Rekha Tiwari</div>
+                    <div class="member-region">Champawat</div>
+                    <div class="member-year">Member since 2020</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">HP</div>
+                    <div class="member-name">Harish & Priya Dobhal</div>
+                    <div class="member-region">Uttarkashi</div>
+                    <div class="member-year">Member since 2020</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">NK</div>
+                    <div class="member-name">Naveen & Kiran Upreti</div>
+                    <div class="member-region">Chamoli</div>
+                    <div class="member-year">Member since 2021</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">AS</div>
+                    <div class="member-name">Ashok & Seema Gusain</div>
+                    <div class="member-region">Rudraprayag</div>
+                    <div class="member-year">Member since 2021</div>
+                </div>
+
+                <div class="member-card">
+                    <div class="member-avatar">BM</div>
+                    <div class="member-name">Bharat & Mamta Singh</div>
+                    <div class="member-region">Udham Singh Nagar</div>
+                    <div class="member-year">Member since 2022</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 2rem; color: #666;">
+                ... and many more wonderful families! Total: 150+ families
+            </p>
         </section>
 
         <!-- Gallery Section -->
@@ -446,70 +672,20 @@
             </p>
         </section>
 
-        <!-- Membership Section -->
-        <section id="membership">
-            <h2>Become a Member</h2>
-            <p>Join our growing community and help preserve Uttarakhandi culture in Houston!</p>
-            
+        <!-- Join Section -->
+        <section id="join">
+            <h2>Join Our Community</h2>
             <div class="highlight">
-                <h3>Membership Benefits</h3>
-                <ul class="feature-list">
-                    <li>Free entry to most community events</li>
-                    <li>Priority registration for cultural programs</li>
-                    <li>Access to community WhatsApp group and directory</li>
-                    <li>Voting rights in community decisions</li>
-                    <li>Special discounts on ticketed events</li>
-                    <li>Community support network for new families</li>
-                </ul>
-
-                <h3>Membership Types</h3>
-                <p><strong>Annual Membership:</strong> $50 per family</p>
-                <p><strong>Lifetime Membership:</strong> $500 per family</p>
+                <h3>Become Part of Our Family!</h3>
+                <p>We welcome all families from Uttarakhand or those who love Uttarakhandi culture to join our community. Being part of our community means:</p>
                 
-                <p style="margin-top: 2rem;">
-                    <a href="https://forms.gle/YOUR-GOOGLE-FORM-ID" class="button" target="_blank">Apply for Membership</a>
-                </p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <div class="contact-grid">
-                    <div>
-                        <h3>📧 Email</h3>
-                        <p>General Inquiries:<br>
-                        info@uttarakhandhouston.org</p>
-                        <p style="margin-top: 0.5rem;">President:<br>
-                        president@uttarakhandhouston.org</p>
-                    </div>
-                    <div>
-                        <h3>📱 Phone</h3>
-                        <p>President: (832) XXX-XXXX<br>
-                        Secretary: (713) XXX-XXXX</p>
-                    </div>
-                    <div>
-                        <h3>📍 Meeting Location</h3>
-                        <p>India House<br>
-                        8888 W Bellfort Ave<br>
-                        Houston, TX 77031</p>
-                    </div>
-                    <div>
-                        <h3>🌐 Follow Us</h3>
-                        <p>Facebook: @UttarakhandHouston<br>
-                        WhatsApp: Join our group<br>
-                        Instagram: @uk_houston</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Uttarakhand Community of Houston. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">जय उत्तराखंड | जय हिंद 🏔️</p>
-    </footer>
-</body>
-</html>
+                <ul class="feature-list">
+                    <li>Celebrating festivals and traditions together</li>
+                    <li>Children learning about their cultural heritage</li>
+                    <li>Making lifelong friendships with similar backgrounds</li>
+                    <li>Supporting each other in a new country</li>
+                    <li>Participating in cultural programs and events</li>
+                    <li>Keeping our languages and traditions alive</li>
+                    <li>Access to community WhatsApp group for updates</li>
+                    <li>Opportunities to showcase talents and skills</li>
+                </ul>
